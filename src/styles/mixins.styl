@@ -1,0 +1,21 @@
+@import './variables'
+
+debug()
+  background-color rgba(red, .33) !important
+
+ghost()
+  content ''
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+
+transition(property = all)
+  transition $transitionDefault
+  transition-property property
+
+hoverDesktop()
+  &:hover
+    html.desktop &
+      {block}

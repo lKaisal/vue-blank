@@ -1,0 +1,51 @@
+{
+  "name": "vue-blank",
+  "version": "3.0.0",
+  "description": "Vue projects kick-starter",
+  "author": "Sergei Kornienko <qluqua@gmail.com>",
+  "private": true,
+  "scripts": {
+    "svg-sprite": "svg-sprite --symbol --symbol-dest=public/static/images --symbol-sprite=sprite.svg src/assets/images/svg/*.svg",
+    "serve": "yarn svg-sprite && vue-cli-service serve",
+    "start": "yarn svg-sprite && vue-cli-service serve",
+    "build": "yarn svg-sprite && vue-cli-service build && ln -s dist www",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "dependencies": {
+    "current-device": "^0.7.8",
+    "register-service-worker": "^1.0.0",
+    "stylus-mixins": "https://github.com/glebmachine/stylus-mixins",
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.0.0",
+    "vue-observe-visibility": "^0.4.1",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^2.2.46",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-e2e-cypress": "^3.0.0-beta.15",
+    "@vue/cli-plugin-pwa": "^3.0.0-beta.15",
+    "@vue/cli-plugin-typescript": "^3.0.0-beta.15",
+    "@vue/cli-plugin-unit-mocha": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "bemto.pug": "^2.1.0",
+    "chai": "^4.1.2",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "svg-sprite": "^1.4.0",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
