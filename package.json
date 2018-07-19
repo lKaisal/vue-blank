@@ -5,10 +5,11 @@
   "author": "Sergei Kornienko <qluqua@gmail.com>",
   "private": true,
   "scripts": {
-    "svg-sprite": "svg-sprite --symbol --symbol-dest=public/static/images --symbol-sprite=sprite.svg src/assets/images/svg/*.svg",
-    "serve": "yarn svg-sprite && vue-cli-service serve",
     "start": "yarn svg-sprite && vue-cli-service serve",
+    "serve": "yarn svg-sprite && vue-cli-service serve",
+    "serve-prd": "yarn svg-sprite && vue-cli-service serve --mode production",
     "build": "yarn svg-sprite && vue-cli-service build --dest www && ln -s www dist",
+    "svg-sprite": "svg-sprite --symbol --symbol-dest=public/static/images --symbol-sprite=sprite.svg src/assets/images/svg/*.svg",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
