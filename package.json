@@ -8,21 +8,24 @@
     "svg-sprite": "svg-sprite --symbol --symbol-dest=public/static/images --symbol-sprite=sprite.svg src/assets/images/svg/*.svg",
     "serve": "yarn svg-sprite && vue-cli-service serve",
     "start": "yarn svg-sprite && vue-cli-service serve",
-    "build": "yarn svg-sprite && vue-cli-service build && ln -s dist www",
+    "build": "yarn svg-sprite && vue-cli-service build --dest www && ln -s www dist",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
     "current-device": "^0.7.8",
+    "gsap": "^2.0.1",
     "register-service-worker": "^1.0.0",
     "stylus-mixins": "https://github.com/glebmachine/stylus-mixins",
+    "svgxuse": "^1.2.6",
     "vue": "^2.5.16",
     "vue-class-component": "^6.0.0",
     "vue-observe-visibility": "^0.4.1",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "@types/chai": "^4.1.0",
