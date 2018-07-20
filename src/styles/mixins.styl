@@ -11,9 +11,10 @@ ghost()
   bottom 0
   left 0
 
-transition(property = all)
-  transition $transitionDefault
-  transition-property property
+transition($property = transform\, opacity)
+  transition-property $property
+  transition-duration $tDurationDeafault
+  transition-timing-function $tTimingFunctionDefault
 
 hoverDesktop()
   &:hover
