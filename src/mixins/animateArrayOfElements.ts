@@ -1,4 +1,4 @@
-// import { TimelineLite, Expo } from '@/mixins/gsap'
+// import { TimelineLite, Expo, willChange } from '@/mixins/gsap'
 
 // interface Payload {
 //   elements: HTMLElement[],
@@ -9,17 +9,20 @@
 //   return new Promise(resolve => {
 //     const { elements, rtl } = payload
 //     const timeline = new TimelineLite()
+//     const timelineWch = willChange(timeline)
 
-//     timeline
+//     timelineWch
 //       .staggerFrom(elements, 1, {
 //         opacity: 0,
 //         x: -20 * (rtl ? -1 : 1),
 //         ease: Expo.easeOut,
 //         immediateRender: true,
 //       }, .1, 0)
+
+//     timeline
 //       .add(resolve)
 //   })
 // }
 
 // export { animateArrayOfElements }
-// export default { methods: { animateArrayOfElements } }
+// export default animateArrayOfElements

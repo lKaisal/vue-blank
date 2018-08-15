@@ -1,16 +1,16 @@
-function scriptIncluded(url) {
+function scriptAlreadyIncluded(url: string): boolean {
   const scripts = Array.from(document.querySelectorAll('script'))
 
   if (!scripts.length) {
     return false
   }
 
-  return scripts.filter(script => script.src === url).length
+  return !!scripts.filter(script => script.src === url).length
 }
 
-function includeScriptOnce(url) {
+function includeScriptOnce(url: string): Promise<boolean> {
   return new Promise(resolve => {
-    if (scriptIncluded(url)) {
+    if (scriptAlreadyIncluded(url)) {
       resolve(true)
       return true
     }

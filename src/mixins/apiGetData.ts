@@ -6,7 +6,11 @@ interface FetchOptions {
 const apiGetData = async (options: FetchOptions ) => {
   try {
     const { endpoint, parameters } = options
-    const data = await fetch(endpoint)
+    const headers: any = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
+    const data = await fetch(endpoint, headers)
 
     return data.json()
   } catch (error) {
