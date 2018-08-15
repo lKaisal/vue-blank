@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '@/store'
 import PageAsObject from '@/pages/PageAsObject.vue'
 import PageAsClass from '@/pages/PageAsClass.vue'
 
@@ -33,10 +34,15 @@ const router = new Router({
         selector: to.hash
       }
     }
-    return { x: 0, y: 0 }
+
+    if (!to.meta.saveScrollPosition || !from.meta.saveScrollPosition) {
+      return { x: 0, y: 0 }
+    }
   }
 })
 
-// router.beforeEach((to, from, next) => {})
+// router.beforeEach((to, from, next) => {
+//   next()
+// })
 
 export default router

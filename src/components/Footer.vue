@@ -1,22 +1,19 @@
 <template lang="pug">
   include ../tools/all
 
-  +b.example
-    +e.container {{ message }}
+  +b.footer footer
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component
-export default class ComponentAsClass extends Vue {
-  private message: string = 'ComponentAsClass message'
-}
+export default class Footer extends Vue {}
 </script>
 
 <style lang="stylus" scoped>
 @import '../styles/tools'
 
-.example
+.footer
   // 
 </style>

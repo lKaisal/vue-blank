@@ -2,15 +2,21 @@
   include ./tools/bemto.pug
 
   +b.app#app(v-cloak)
-    router-view
+    LayoutDefault
+      router-view(:key="$route.path")
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import LayoutDefault from '@/layouts/LayoutDefault.vue'
 
-@Component
+@Component({
+  components: {
+    LayoutDefault
+  }
+})
 export default class App extends Vue {
-  private beforeMount() {
+  created() {
     window.addEventListener('resize', () => this.$store.commit('ui/calculateWindowWidth'))
   }
 }

@@ -1,23 +1,30 @@
 <template lang="pug">
   include ../tools/all.pug
 
-  +b.page
+  +b.layout
+    Navbar
     slot
+    Footer
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component'
+import { Component } from 'vue-property-decorator'
+import LayoutBase from '@/layouts/LayoutBase.vue'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 
 @Component({
-  name: 'LayoutDefault'
+  components: {
+    Navbar,
+    Footer
+  }
 })
-export default class LayoutDefault extends Vue {}
+export default class LayoutDefault extends LayoutBase {}
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../styles/tools'
 
-.page
+.layout
   // 
 </style>
