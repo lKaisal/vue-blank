@@ -1,15 +1,19 @@
 <template lang="pug">
   include ../tools/all.pug
 
-  +b.page PageAsObject
+  +b.COMPONENT.page(is="LayoutDefault") PageAsObject
 </template>
 
 <script>
 import PageBase from '@/pages/PageBase'
+import LayoutDefault from '@/layouts/LayoutDefault.vue'
 
 export default {
   name: 'PageAsObject',
   extends: PageBase,
+  components: {
+    LayoutDefault
+  }
 }
 </script>
 

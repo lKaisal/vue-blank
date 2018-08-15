@@ -2,7 +2,10 @@
   include ../tools/all.pug
 
   +b.layout
-    slot
+    +e.sidebar
+      slot(name="sidebar")
+    +e.main
+      slot(name="main")
 </template>
 
 <script lang="ts">
@@ -10,7 +13,7 @@ import { Component } from 'vue-property-decorator'
 import LayoutBase from '@/layouts/LayoutBase.vue'
 
 @Component
-export default class LayoutDefault extends LayoutBase {}
+export default class LayoutSidebar extends LayoutBase {}
 </script>
 
 <style lang="stylus" scoped>
