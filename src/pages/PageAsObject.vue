@@ -1,23 +1,15 @@
 <template lang="pug">
   include ../tools/all.pug
 
-  LayoutDefault
-    +b.page PageAsObject
+  +b.page PageAsObject
 </template>
 
 <script>
-import PagePrototype from '@/components/PagePrototype'
-import LayoutDefault from '@/layouts/LayoutDefault'
+import PageBase from '@/pages/PageBase'
 
 export default {
   name: 'PageAsObject',
-  extends: PagePrototype,
-  components: {
-    LayoutDefault,
-  },
-  mounted() {
-    console.log('PageAsObject mounted')
-  }
+  extends: PageBase,
 }
 </script>
 

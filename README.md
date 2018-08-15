@@ -1,13 +1,16 @@
-## Фронтенд
-## Баги ! ВНИМАНИЕ !
-* **Баг в динамической загрузке картинок**: при использовании конструкции ```+e.IMG.image(:src="imagePathVariable")``` bemto херит картинки, вместо них будет белиберда в base64. Что ьы это избежаеть на используйте bemto на тегах ```img```, но можете использовать pug, приведя конструкцию из примера к виду ```IMG.image(:src="imagePathVariable" class="blockName__image")```
+## Frontend part:
+## !Attention!
+* **Dynamic image src bug. Thanks to Bemto**: this will NOT work: ```+e.IMG.image(:src="imagePathVariable")``` bemto converts image path to an emty base64 image. Don't use ```+e``` or ```+b``` bemto syntax with ```img``` tag with dynamic src. Use normal pug syntax instead ```IMG.image(:src="imagePathVariable" class="blockName__image")```
 
-##### Команды
-* ```yarn start``` зарезервировано для запуска бекенда если он есть
-* ```yarn serve``` старт дев-сервера
-* ```yarn build``` билдим на продакшн
-* ```yarn svg-sprite``` генерим svg-спрайт из картинок в папке ```/public/static/images/svg```
+##### Scripts
+* ```yarn start``` starts backend and frontend
+* ```yarn serve``` starts frontend dev server
+* ```yarn build``` build in production mode
+* ```yarn svg-sprite``` generates svg sprite from all svg images in this folder: ```/public/static/images/svg```
 
-##### Структура папок
-* ```/public``` корень проекта после сборки на прод
-* ```/public/static``` статика: шрифты, картинки которые не должны быть в ассетах и прочие pdf
+##### Folder structure
+* ```/public``` dist root
+* ```/public/static``` static files like fonts, pdf etc.
+
+##### Vendors
+* [validator.js](https://github.com/chriso/validator.js) all-you-need strings validation library with a la carte imports

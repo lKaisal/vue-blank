@@ -1,25 +1,15 @@
 <template lang="pug">
   include ../tools/all.pug
 
-  LayoutDefault
-    +b.page PageAsClass
+  +b.page PageAsClass
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import PagePrototype from '@/components/PagePrototype.vue'
-import LayoutDefault from '@/layouts/LayoutDefault.vue'
+import PageBase from '@/pages/PageBase.vue'
 
-@Component({
-  components: {
-    LayoutDefault
-  }
-})
-export default class PageAsClass extends Vue {
-  private mounted() {
-    console.log('PageAsClass mounted')
-  }
-}
+@Component
+export default class PageAsClass extends PageBase {}
 </script>
 
 <style lang="stylus" scoped>
