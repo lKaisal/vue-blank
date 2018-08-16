@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+// tools
+import setTitle from '@/mixins/setTitle'
+
+// pages
 import PageAsObject from '@/pages/PageAsObject.vue'
 import PageAsClass from '@/pages/PageAsClass.vue'
 import Page404 from '@/pages/Page404.vue'
@@ -41,8 +46,14 @@ const router = new Router({
   }
 })
 
-// router.beforeEach((to, from, next) => {
-//   next()
-// })
+router.beforeEach((to, from, next) => {
+  const nextTitle = to['meta'] && to['meta'].title
+
+  if (nextTitle) {
+    setTitle(nextTitle)
+  }
+
+  next()
+})
 
 export default router

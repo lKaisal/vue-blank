@@ -1,7 +1,10 @@
 <template lang="pug">
   include ../tools/all
 
-  +b.navbar navbar
+  +b.navbar
+    +e.heading navbar
+    +e.ROUTER-LINK.link(to="/" tag="div") home
+    +e.ROUTER-LINK.link(to="/test" tag="div") test
 </template>
 
 <script lang="ts">
