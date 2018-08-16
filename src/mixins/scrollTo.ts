@@ -7,7 +7,7 @@ function scrollTo(
   /** Число, строка или объект (HTML-элемент)
    * Если объект - рассчитывается расстояние от края экрана до верхней границы элемента
    * и прибавляется величина прокрутки экрана.
-   * Если число - скроллит на заданное число px.
+   * Если число(строка) - скроллит на заданное число px.
    */
   payload: any = 0,
   /** Отступ от верхнего края экрана */
@@ -22,11 +22,12 @@ function scrollTo(
     top += window.scrollY
   }
 
-  window.scroll({
+  window.scrollTo({
     top,
-    left: 0,
     behavior: 'smooth'
   })
+
+  // window.scroll(0, top)
 }
 
 export { scrollTo }
