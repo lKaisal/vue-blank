@@ -7,6 +7,8 @@ node_modules
 /tmp
 /public/static/images/sprite.svg
 
+/libs/swagger
+
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 

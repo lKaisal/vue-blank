@@ -1,9 +1,10 @@
+// @TODO: add method option: POST, GET etc.
 interface FetchOptions {
-  endpoint: string;
-  parameters?: object;
+  endpoint: string
+  parameters?: object
 }
 
-const apiGetData = async (options: FetchOptions ) => {
+const apiFetch = async (options: FetchOptions ) => {
   try {
     const { endpoint, parameters } = options
     const headers: any = {
@@ -18,5 +19,5 @@ const apiGetData = async (options: FetchOptions ) => {
   }
 }
 
-export { apiGetData }
-export default apiGetData
+export { apiFetch }
+export default apiFetch

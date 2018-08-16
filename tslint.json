@@ -27,6 +27,7 @@
     "no-shadowed-variable": false,
     "max-line-length": false,
     "no-unused-expression": false,
-    "member-access": false
+    "member-access": false,
+    "no-reference": false
   }
 }
