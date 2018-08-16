@@ -1,5 +1,5 @@
 function calcTop(el) {
-  return el.getBoundingClientRect().top;
+  return el.getBoundingClientRect().top
 }
 
 /** Функция вертикальной прокрутки на заданное расстояние или до указанного HTML-элемента */
@@ -13,7 +13,7 @@ function scrollTo(
   /** Отступ от верхнего края экрана */
   gutter: number = 0
 ) {
-  const isObject = typeof payload === "object";
+  const isObject = typeof payload === 'object';
   let top = isObject ? calcTop(payload) : Number(payload);
 
   top -= gutter;
@@ -25,7 +25,7 @@ function scrollTo(
   /** Проверка браузера 
    * Значение если InternetExplorer: true
    */
-  const isIE = navigator.userAgent.search("Edge")
+  const isIE = navigator.userAgent.search('Edge')
 
   /** Функция для IE */
   if ( isIE > 0) {
@@ -36,7 +36,7 @@ function scrollTo(
   /** Функция для остальных браузеров */
   window.scrollTo({
     top,
-    behavior: "smooth"
+    behavior: 'smooth'
   });
 }
 
