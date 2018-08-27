@@ -29,7 +29,7 @@ function scrollTo(
   /** Проверка браузера
    * Значение если InternetExplorer: true
    */
-  const isEdge = navigator.userAgent.search('Edge')
+  const isEdge = navigator.userAgent.indexOf('Edge') !== -1
   const isIE = (navigator.userAgent.indexOf('.NET') !== -1)
 
   /** Функция для IE */
@@ -44,7 +44,7 @@ function scrollTo(
   }
 
   /** Функция для IE */
-  if ( isEdge > 0) {
+  if ( isEdge) {
     window.scroll(0, top)
     return
   }
