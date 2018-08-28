@@ -17,14 +17,15 @@ function scrollTo(
   /** Отступ от верхнего края экрана */
   gutter: number = 0
 ) {
-  const isObject = typeof payload === 'object'
-  let top = isObject ? calcTop(payload) : Number(payload)
+  const isObject = typeof payload === 'object';
+  let top = isObject ? calcTop(payload) : Number(payload);
 
-  top -= gutter
+  top -= gutter;
 
   if (isObject) {
-    top += window.scrollY
+    top += window.scrollY;
   }
+
 
   /** Проверка браузера
    * Значение если InternetExplorer: true
@@ -47,6 +48,7 @@ function scrollTo(
   if ( isEdge) {
     window.scroll(0, top)
     return
+
   }
 
   /** Функция для остальных браузеров */
@@ -54,7 +56,8 @@ function scrollTo(
     top,
     behavior: 'smooth'
   })
+
 }
 
-export { scrollTo }
-export default scrollTo
+export { scrollTo };
+export default scrollTo;
