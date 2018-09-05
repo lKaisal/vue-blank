@@ -28,7 +28,7 @@ grid-column($colsCount, $gutter, $size)
 
   return 'calc((((100% - %s) / %s) * %s) + %s)' % ($gutters $colsCount $size $innerGutters)
 
-grid-offset($colsCount, $gutter, $size)
+grid-column-with-offset($colsCount, $gutter, $size)
   $gutter = $gutter * 1px
   $gutters = ($colsCount - 1) * $gutter
   $guttersOffset = ($size) * $gutter
